@@ -1,0 +1,208 @@
+/* Base styles */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #d5faff;
+}
+
+.contacts {
+    flex: 1; /* Ensure the contacts section takes up the remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Spacing between info and links */
+}
+
+.contact-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contacts-text-p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.contact-img-container {
+    perspective: 1000px; /* Perspective for 3D effect */
+    position: relative; /* Ensure positioning context for absolute positioning of children */
+    width: 200px;
+    height: 200px;
+}
+
+.contact-img-container img,
+.contact-img-container .backcard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back face of elements during rotation */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out; /* Smooth transition for transform */
+}
+
+.contact-img-container .backcard {
+    background: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.social-text {
+    font-size: 1.3rem;
+    line-height: 2;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333; /* Adjust link color */
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #4285f4;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+}
+
+.footer-container {
+    width: 100%;
+    background-color: #446e78; /* Set the background color to black */
+    color: #fff; /* Set the text color to white for readability */
+    padding: 20px;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: #fff; /* Ensure headers are white */
+}
+
+.footer-section p, .footer-section ul {
+    margin: 0;
+    color: #ccc; /* Lighten the text color for better contrast */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff; /* Set link color to white */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #4CAF50; /* Change link color on hover for better visibility */
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    margin-top: 20px;
+    color: #ccc; /* Lighten the text color for better contrast */
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .contact-info {
+        flex-direction: row;
+        justify-content: space-evenly;
+        text-align: left;
+    }
+
+    .contact-img-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .contacts {
+        padding-inline: 50px;
+    }
+
+    .contact-links {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 100px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-section {
+        text-align: left;
+    }
+
+    .footer-container {
+        padding-inline: 200px;
+    }
+}
+
+@media (min-width: 510px) and (max-width: 865px) {
+    .contact-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .contact-img-container {
+        width: 250px;
+        height: 250px;
+    }
+
+}
