@@ -36,7 +36,7 @@ window.addEventListener("scroll", activateMenuItemOnScroll);
 
 // Add click event listeners to menu items
 menuHeader.forEach(element => {
-    element.addEventListener("click", (e) => {
+    element.addEventListener("click", () => {
         if (!element.classList.contains("active")) {
             menuHeader.forEach(el => {
                 el.classList.remove("active");
